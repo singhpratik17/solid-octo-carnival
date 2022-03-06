@@ -1,5 +1,4 @@
 import httpAdapter from "axios/lib/adapters/http";
-import createError from "axios/lib/core/createError";
 
 let batchedRequestsMap = {};
 let batchedRequestPromise = {};
@@ -48,7 +47,7 @@ const responseResolver = (config) => {
         const items = data.items.filter((item) => ids.includes(item.id));
 
         if (!items.length) {
-            return Promise.reject(createError("Not found!", config, 404));
+            return Promise.reject("No results");
         }
 
         return Promise.resolve({ ...res, data: { items } });

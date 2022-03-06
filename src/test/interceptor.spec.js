@@ -54,7 +54,7 @@ describe("Interceptor tests", () => {
   it("Test batch in different calls with fileid1, fileid2, fileid3 ", () => {
     const batchUrl = "/file-batch-api";
     // you are free to experiment with any timeout
-    const myTimeout = 2000;
+    const myTimeout = 500;
     // you should see this call in the network tab
     const call1 = apiClient.get(batchUrl, {
       params: {
