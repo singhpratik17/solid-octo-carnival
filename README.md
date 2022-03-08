@@ -27,6 +27,10 @@ This would be already using batching/bulk of some form.~~ - Doesn't fit. Bulk re
 ~~Other than this, I have seen a few google apis use batching, with an option to even batch api calls of different types and to different endpoints.~~ - This is also more of a server side batching now when I think about it.
 
 I could only think of similar use cases where there is a need to load some secondary information - chat, feed. 
+In the current application that I am working on, we load the products first and then a request goes out for pricing for each product.
+We do send a batched(bulk!) request, but we don't do it at the axios/fetch level. This could be one use case. 
+
+React batches the setState calls if there are multiple calls inside the same event handler/function. But this is not a http request!  
 
 #### Benefits:
 Reduces the number of http handshakes, thus reduces the load on the server. Servers usually have a rate-limiter, batching reduces the probability of it blocking requests.
