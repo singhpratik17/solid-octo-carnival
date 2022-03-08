@@ -20,10 +20,13 @@
 `PS: I found approach 2 online and updated it a bit.`
     
 ### Give another good use case for batching requests and its benefits.
-I use an application to buy stocks which enables one to buy stocks of different companies at once. 
+~~I use an application to buy stocks which enables one to buy stocks of different companies at once. 
 So, instead of sending buy requests for each stock, it only sends one request. 
-This would be already using batching/bulk of some form.
+This would be already using batching/bulk of some form.~~ - Doesn't fit. Bulk request suits better. client side batching doesn't fit.
 
-Other than this, I have seen a few google apis use batching, with an option to even batch api calls of different types and to different endpoints. 
+~~Other than this, I have seen a few google apis use batching, with an option to even batch api calls of different types and to different endpoints.~~ - This is also more of a server side batching now when I think about it.
+
+I could only think of similar use cases where there is a need to load some secondary information - chat, feed. 
+
 #### Benefits:
 Reduces the number of http handshakes, thus reduces the load on the server. Servers usually have a rate-limiter, batching reduces the probability of it blocking requests.
